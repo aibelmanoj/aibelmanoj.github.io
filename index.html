@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aibel Manoj — IMCA student and aspiring Data Scientist.">
+<title>Aibel Manoj | Portfolio</title>
+<style>
+:root{
+  --bg:#07080c;
+  --bg2:#0d1017;
+  --card:#11141c;
+  --text:#f4f7fb;
+  --muted:#9aa4b2;
+  --line:rgba(255,255,255,.09);
+  --accent:#8b5cf6;
+  --accent2:#22d3ee;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 80% 10%,rgba(139,92,246,.16),transparent 28%),
+    radial-gradient(circle at 10% 35%,rgba(34,211,238,.08),transparent 25%),
+    var(--bg);
+  color:var(--text);line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),92%);margin:auto}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  background:rgba(7,8,12,.72);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:-.04em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;color:var(--muted);font-size:.92rem}
+.nav-links a:hover{color:white}
+.menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:9px;padding:7px 12px;
+  border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);
+  color:#cbd5e1;font-size:.82rem;margin-bottom:22px
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 14px #34d399}
+h1{font-size:clamp(3.2rem,7vw,6.5rem);line-height:.92;letter-spacing:-.075em;margin-bottom:26px}
+.gradient{
+  background:linear-gradient(110deg,#fff 10%,#c4b5fd 48%,#67e8f9 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.hero p{max-width:650px;color:var(--muted);font-size:1.1rem}
+.buttons{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:10px;border:1px solid var(--line);font-weight:650;font-size:.92rem}
+.btn-primary{background:white;color:#08090d;border-color:white}
+.btn-primary:hover{background:#ddd}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.code-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  border:1px solid var(--line);border-radius:20px;padding:2px;
+  box-shadow:0 30px 90px rgba(0,0,0,.45)
+}
+.code-window{background:#0b0e14;border-radius:18px;overflow:hidden}
+.window-bar{height:42px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;padding:0 14px}
+.circle{width:9px;height:9px;border-radius:50%;background:#303744}
+.code{padding:25px;font:14px/2 "SFMono-Regular",Consolas,monospace;color:#cbd5e1}
+.purple{color:#c4b5fd}.cyan{color:#67e8f9}.green{color:#86efac}.gray{color:#64748b}
+section{padding:105px 0}
+.section-head{margin-bottom:38px}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:#67e8f9;font-weight:800;margin-bottom:9px}
+h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.055em}
+.section-head p{color:var(--muted);max-width:650px;margin-top:10px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;padding:28px}
+.card h3{font-size:1.1rem;margin-bottom:10px}
+.card p{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.stat{padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}
+.stat strong{display:block;font-size:1.5rem}.stat span{font-size:.8rem;color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.skill{padding:9px 13px;border-radius:9px;border:1px solid var(--line);background:#0d1118;color:#dbe3ee;font-size:.88rem}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{position:relative;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.project::after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-65px;top:-65px;background:radial-gradient(circle,rgba(139,92,246,.28),transparent 68%)}
+.project-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.project-number{font:12px monospace;color:#64748b}
+.tag{font-size:.72rem;color:#a5b4fc;border:1px solid rgba(139,92,246,.3);padding:5px 8px;border-radius:99px}
+.project h3{font-size:1.35rem;margin:25px 0 8px}
+.project p{font-size:.9rem;color:var(--muted)}
+.project a{display:inline-block;margin-top:20px;color:#c4b5fd;font-size:.88rem;font-weight:700}
+.timeline{border-left:1px solid var(--line);margin-left:8px;padding-left:28px}
+.timeline-item{position:relative;margin-bottom:30px}
+.timeline-item::before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);left:-33px;top:8px;box-shadow:0 0 18px rgba(139,92,246,.7)}
+.timeline-item .date{font-size:.75rem;color:#67e8f9;text-transform:uppercase;letter-spacing:.12em}
+.timeline-item h3{margin:5px 0}
+.timeline-item p{color:var(--muted)}
+.contact{
+  text-align:center;padding:70px 20px;border:1px solid var(--line);border-radius:24px;
+  background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(34,211,238,.05))
+}
+.contact p{color:var(--muted);max-width:600px;margin:12px auto 24px}
+footer{padding:35px 0;color:#667085;font-size:.8rem;text-align:center}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){
+  .nav-links{display:none}.menu{display:block}
+  .nav-links.open{position:absolute;top:72px;left:0;right:0;display:flex;flex-direction:column;padding:20px;background:#090b10;border-bottom:1px solid var(--line);gap:18px}
+  .hero-grid,.about-grid,.projects{grid-template-columns:1fr}
+  .hero{padding-top:125px}
+  .hero-grid{gap:45px}
+  h1{font-size:clamp(3.2rem,16vw,5.2rem)}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Aibel<span>.</span></a>
+    <button class="menu" aria-label="Open menu">☰</button>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#journey">Journey</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="badge"><span class="dot"></span> IMCA Student · Building in Public</div>
+      <h1>Hi, I'm <span class="gradient">Aibel.</span></h1>
+      <p>
+        An Integrated MCA student at Rajagiri College of Social Sciences,
+        learning to turn ideas into useful technology. Currently focused on
+        programming, problem solving, and building a strong foundation for a career in data science.
+      </p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#projects">View my work</a>
+        <a class="btn btn-ghost" href="#contact">Let's connect →</a>
+      </div>
+    </div>
+    <div class="code-card reveal">
+      <div class="code-window">
+        <div class="window-bar"><span class="circle"></span><span class="circle"></span><span class="circle"></span></div>
+        <div class="code">
+          <div><span class="purple">const</span> developer = {</div>
+          <div>&nbsp;&nbsp;name: <span class="green">"Aibel Manoj"</span>,</div>
+          <div>&nbsp;&nbsp;degree: <span class="green">"IMCA"</span>,</div>
+          <div>&nbsp;&nbsp;focus: <span class="green">"Data Science"</span>,</div>
+          <div>&nbsp;&nbsp;learning: [</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"C"</span>, <span class="green">"Python"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"Problem Solving"</span></div>
+          <div>&nbsp;&nbsp;],</div>
+          <div>&nbsp;&nbsp;mindset: <span class="cyan">"Keep learning."</span></div>
+          <div>};</div>
+          <br>
+          <div class="gray">// next commit: something better</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+<div class="container">
+  <div class="section-head reveal">
+    <div class="eyebrow">01 — About</div>
+    <h2>Curious about how technology works.</h2>
+    <p>I'm at the beginning of my software journey, focused on learning fundamentals properly rather than just collecting technologies.</p>
+  </div>
+  <div class="about-grid">
+    <div class="card reveal">
+      <h3>Who I am</h3>
+      <p>
+        I'm an Integrated MCA student from Kerala. I enjoy coding, exploring technology,
+        and learning by building small projects. My current long-term direction is data science,
+        with an interest in developing broader software skills along the way.
+      </p>
+      <div class="stats">
+        <div class="stat"><strong>IMCA</strong><span>Current degree</span></div>
+        <div class="stat"><strong>2026</strong><span>Started my journey</span></div>
+        <div class="stat"><strong>∞</strong><span>Things to learn</span></div>
+      </div>
+    </div>
+    <div class="card reveal" id="skills">
+      <h3>Current toolkit</h3>
+      <p>Technologies and concepts I'm actively learning and practicing.</p>
+      <div class="skills">
+        <span class="skill">C Programming</span>
+        <span class="skill">Python</span>
+        <span class="skill">Problem Solving</span>
+        <span class="skill">Git / GitHub</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Discrete Mathematics</span>
+        <span class="skill">Algorithms — Beginner</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+  <div class="section-head reveal">
+    <div class="eyebrow">02 — Projects</div>
+    <h2>Things I've built and explored.</h2>
+    <p>Small projects are where I turn classroom concepts into actual working programs.</p>
+  </div>
+  <div class="projects">
+    <article class="card project reveal">
+      <div>
+        <div class="project-top"><span class="project-number">01 / C</span><span class="tag">Logic</span></div>
+        <h3>Truth Table Generator</h3>
+        <p>A beginner-friendly C program that generates truth tables for logical expressions using propositions such as p and q, including negation, conjunction and disjunction.</p>
+      </div>
+      <a href="#contact">Project details →</a>
+    </article>
+    <article class="card project reveal">
+      <div>
+        <div class="project-top"><span class="project-number">02 / C</span><span class="tag">Programming</span></div>
+        <h3>C Programming Practice</h3>
+        <p>A collection of practice programs covering loops, conditionals, arrays, number problems, patterns, functions and basic problem-solving techniques.</p>
+      </div>
+      <a href="#contact">More coming soon →</a>
+    </article>
+    <article class="card project reveal">
+      <div>
+        <div class="project-top"><span class="project-number">03 / Presentation</span><span class="tag">Business</span></div>
+        <h3>Zerodha Case Study</h3>
+        <p>A college business assignment exploring Nithin Kamath and Zerodha, presented through a short, modern video with supporting visuals.</p>
+      </div>
+      <a href="#contact">View presentation →</a>
+    </article>
+    <article class="card project reveal">
+      <div>
+        <div class="project-top"><span class="project-number">04 / Community</span><span class="tag">Civic Responsibility</span></div>
+        <h3>Trash Hunt 5.0</h3>
+        <p>A group civic-responsibility activity at Fort Kochi beach, focused on collecting plastic waste and contributing to a cleaner public space.</p>
+      </div>
+      <a href="#contact">Learn more →</a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="journey">
+<div class="container">
+  <div class="section-head reveal">
+    <div class="eyebrow">03 — Journey</div>
+    <h2>Learning one step at a time.</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="date">2026 — Present</div>
+      <h3>Integrated MCA · Rajagiri College of Social Sciences</h3>
+      <p>Building fundamentals in computer applications, programming, mathematics and problem solving.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="date">Current Focus</div>
+      <h3>Programming Foundations</h3>
+      <p>Practicing C and Python while improving logic, algorithms and confidence with code.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="date">Long-Term Direction</div>
+      <h3>Aspiring Data Scientist</h3>
+      <p>Planning to progress from strong programming fundamentals toward data analysis, machine learning and data science.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="contact reveal">
+    <div class="eyebrow">04 — Contact</div>
+    <h2>Let's build something.</h2>
+    <p>I'm open to connecting with fellow students, developers, mentors and people interested in technology.</p>
+    <div class="buttons" style="justify-content:center">
+      <a class="btn btn-primary" href="mailto:YOUR_EMAIL@example.com">Email me</a>
+      <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub →</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn →</a>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© <span id="year"></span> Aibel Manoj · Built while learning.</div>
+</footer>
+
+<script>
+const menu=document.querySelector('.menu');
+const links=document.querySelector('.nav-links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
